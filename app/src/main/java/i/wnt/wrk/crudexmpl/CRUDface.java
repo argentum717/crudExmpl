@@ -1,5 +1,7 @@
 package i.wnt.wrk.crudexmpl;
 
+import java.util.List;
+
 /**
  * Created by argentum717 on 23.12.2015.
  * В интерфейсе описываем основные методы,
@@ -27,7 +29,7 @@ public interface CRUDface<T> {
      *
      * @param record - содержит в себе ключ(город) и данные для обновления(тпмпература)
      */
-    void updateRecord(T record);
+    int updateRecord(T record);
 
     /**
      * Удаляем запись из БД по ключу
@@ -35,4 +37,18 @@ public interface CRUDface<T> {
      * @param key - название города
      */
     void deleteRecord(String key);
+
+    /**
+     * Возвращает все существующие записи в таблице
+     *
+     * @return - список (list) записей с данными из БД
+     */
+    List<T> getAllRecord();
+
+    /**
+     * Получаем количество записей в таблице
+     *
+     * @return - число записей в таблице
+     */
+    long getCount();
 }
