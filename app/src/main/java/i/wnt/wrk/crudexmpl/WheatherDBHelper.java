@@ -48,7 +48,7 @@ public class WheatherDBHelper extends SQLiteOpenHelper implements CRUDface<Wheat
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Все как в обычных примерах, ничего нового
-        db.execSQL("DROP TABLE IF EXIST " + DB_TABLENAME);
+        db.execSQL("DROP TABLE IF EXISTS " + DB_TABLENAME);
         onCreate(db);
     }
 
